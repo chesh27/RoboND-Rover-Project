@@ -11,11 +11,11 @@ def decision_step(Rover):
 
     # Example:
     # Check if we have vision data to make decisions with
-    if Rover.nav_angles is not None:
+    if Rover.nav_angles is not None: #if we have somehwere to go
         # Check for Rover.mode status
-        if Rover.mode == 'forward': 
+        if Rover.mode == 'forward': #if we're in forward mode 
             # Check the extent of navigable terrain
-            if len(Rover.nav_angles) >= Rover.stop_forward:  
+            if len(Rover.nav_angles) >= Rover.stop_forward: #  
                 # If mode is forward, navigable terrain looks good 
                 # and velocity is below max, then throttle 
                 if Rover.vel < Rover.max_vel:
