@@ -21,7 +21,7 @@ Autonomous Navigation / Mapping
 2. The decision_step() function within the decision.py script contains conditional statements that take into consideration the outputs of the perception_step() in deciding how to issue throttle, brake and steering commands
 3. Iterate on the perception and decision functions until rover does a reasonable job of navigating and mapping. 
 
-Writeup.pdf contains step by step description of the implementation. Below is 
+Writeup.pdf contains a step by step description of the implementation. 
 
 ## The Simulator
 The first step is to download the simulator build that's appropriate for your operating system.  Here are the links for [Linux](https://s3-us-west-1.amazonaws.com/udacity-robotics/Rover+Unity+Sims/Linux_Roversim.zip), [Mac](	https://s3-us-west-1.amazonaws.com/udacity-robotics/Rover+Unity+Sims/Mac_Roversim.zip), or [Windows](https://s3-us-west-1.amazonaws.com/udacity-robotics/Rover+Unity+Sims/Windows_Roversim.zip).  
