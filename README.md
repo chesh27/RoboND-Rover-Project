@@ -6,7 +6,22 @@
 
 ![alt text][image_0] 
 
-This project is modeled after the [NASA sample return challenge](https://www.nasa.gov/directorates/spacetech/centennial_challenges/sample_return_robot/index.html) and it will give you first hand experience with the three essential elements of robotics, which are perception, decision making and actuation.  You will carry out this project in a simulator environment built with the Unity game engine.  
+This project is modeled after the [NASA sample return challenge](https://www.nasa.gov/directorates/spacetech/centennial_challenges/sample_return_robot/index.html) and it outlines the three essential elements of robotics, which are perception, decision making and actuation.  The project is carried out in a simulator environment built with the Unity game engine.  The steps of the project and a description of the associated files are as follows: 
+
+Training / Calibration 
+1. Record training data in Training Mode of the simulator 
+2. Test out the functions in the Jupyter Notebook provided in code > Rover_Project_Test_Notebook.ipynb
+3. Add impage processing functions to detect obstacles and samples of interest (color thresholding, perscpetive transform)
+4. Fill in the process_image() function with the appropriate image processing steps to go from raw images to rover-centric coordinates 
+5. Convert rover-centric pixel values to world coordinates
+6. Use moviepy to process the images in the saved training dataset, video included in output > test_mapping2.mp4
+
+Autonomous Navigation / Mapping 
+1. The perception_step() function within the perception.py script contains the image processing steps to create a map and update Rover() data similar to steps followed in process_image() in the notebook 
+2. The decision_step() function within the decision.py script contains conditional statements that take into consideration the outputs of the perception_step() in deciding how to issue throttle, brake and steering commands
+3. Iterate on the perception and decision functions until rover does a reasonable job of navigating and mapping. 
+
+Writeup.pdf contains step by step description of the implementation. Below is 
 
 ## The Simulator
 The first step is to download the simulator build that's appropriate for your operating system.  Here are the links for [Linux](https://s3-us-west-1.amazonaws.com/udacity-robotics/Rover+Unity+Sims/Linux_Roversim.zip), [Mac](	https://s3-us-west-1.amazonaws.com/udacity-robotics/Rover+Unity+Sims/Mac_Roversim.zip), or [Windows](https://s3-us-west-1.amazonaws.com/udacity-robotics/Rover+Unity+Sims/Windows_Roversim.zip).  
@@ -36,7 +51,7 @@ This command will bring up a browser window in the current directory where you c
 The last two cells in the notebook are for running the analysis on a folder of test images to create a map of the simulator environment and write the output to a video.  These cells should run as-is and save a video called `test_mapping.mp4` to the `output` folder.  This should give you an idea of how to go about modifying the `process_image()` function to perform mapping on your data.  
 
 ## Navigating Autonomously
-The file called `drive_rover.py` is what you will use to navigate the environment in autonomous mode.  This script calls functions from within `perception.py` and `decision.py`.  The functions defined in the IPython notebook are all included in`perception.py` and it's your job to fill in the function called `perception_step()` with the appropriate processing steps and update the rover map. `decision.py` includes another function called `decision_step()`, which includes an example of a conditional statement you could use to navigate autonomously.  Here you should implement other conditionals to make driving decisions based on the rover's state and the results of the `perception_step()` analysis.
+The file called `drive_rover.py` is what is used to navigate the environment in autonomous mode.  This script calls functions from within `perception.py` and `decision.py`.  The functions defined in the IPython notebook are all included in`perception.py` and I have filled in the function called `perception_step()` with the appropriate processing steps and updated the rover map. `decision.py` includes another function called `decision_step()`, which includes conditional statements to make driving decisions based on the rover's state and the results of the `perception_step()` analysis.
 
 `drive_rover.py` should work as is if you have all the required Python packages installed. Call it at the command line like this: 
 
@@ -44,11 +59,5 @@ The file called `drive_rover.py` is what you will use to navigate the environmen
 python drive_rover.py
 ```  
 
-Then launch the simulator and choose "Autonomous Mode".  The rover should drive itself now!  It doesn't drive that well yet, but it's your job to make it better!  
-
-**Note: running the simulator with different choices of resolution and graphics quality may produce different results!  Make a note of your simulator settings in your writeup when you submit the project.**
-
-### Project Walkthrough
-If you're struggling to get started on this project, or just want some help getting your code up to the minimum standards for a passing submission, we've recorded a walkthrough of the basic implementation for you but **spoiler alert: this [Project Walkthrough Video](https://www.youtube.com/watch?v=oJA6QHDPdQw) contains a basic solution to the project!**.
-
+Then launch the simulator and choose "Autonomous Mode".  The rover should drive itself now!  
 
