@@ -10,7 +10,7 @@ This project is modeled after the [NASA sample return challenge](https://www.nas
 Training / Calibration 
 1. Record training data in Training Mode of the simulator 
 2. Test out the functions in the Jupyter Notebook provided in code > Rover_Project_Test_Notebook.ipynb
-3. Add impage processing functions to detect obstacles and samples of interest (color thresholding, perscpetive transform)
+3. Add image processing functions to detect obstacles and samples of interest (color thresholding, perspective transform)
 4. Fill in the process_image() function with the appropriate image processing steps to go from raw images to rover-centric coordinates 
 5. Convert rover-centric pixel values to world coordinates
 6. Use moviepy to process the images in the saved training dataset, video included in output > test_mapping2.mp4
